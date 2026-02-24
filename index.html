@@ -7,4 +7,55 @@
   <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
- 
+  <main class="page">
+
+    <header class="dashHeader">
+      <h1 class="dashTitle">Job Application Tracker</h1>
+
+      <section class="dashboard" aria-label="Dashboard">
+        <div class="dashCard">
+          <p class="dashLabel">Total</p>
+          <h3 class="dashValue" id="totalCount">0</h3>
+        </div>
+        <div class="dashCard">
+          <p class="dashLabel">Interview</p>
+          <h3 class="dashValue dashGreen" id="interviewCount">0</h3>
+        </div>
+        <div class="dashCard">
+          <p class="dashLabel">Rejected</p>
+          <h3 class="dashValue dashRed" id="rejectedCount">0</h3>
+        </div>
+      </section>
+    </header>
+
+    <section class="jobs" aria-label="Jobs list">
+      <div class="jobs__top">
+        <h2 class="jobs__title">Available Jobs</h2>
+        <div class="jobs__right">
+          <span class="jobs__countNum" id="tabCount">0 jobs</span>
+        </div>
+      </div>
+
+      
+      <div class="jobs__divider"></div>
+
+      <div class="tabs" role="tablist" aria-label="Job Tabs">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="interview">Interview</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="rejected">Rejected</button>
+      </div>
+
+      <div id="emptyState" class="empty is-hidden" aria-live="polite">
+        <div class="empty__icon" aria-hidden="true"><img src="jobs.png" alt="" /></div>
+        <h3 class="empty__title" id="emptyTitle">No jobs Available</h3>
+        <p class="empty__sub" id="emptySub">There are no jobs in this category right now.</p>
+      </div>
+
+      <div id="cards" class="cards" aria-label="Job Cards"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
